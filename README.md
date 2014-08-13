@@ -6,6 +6,24 @@ The repository is be served by an nginx server.
 
 Status : work in progress / not ready for production yet.
 
+Uploading packages
+------------------
+
+Fill your ``~/.dput.cf`` with the following content :
+
+	[DEFAULT]
+	default_host_main = docker
+
+	[docker]
+	fqdn = localhost
+	method = scp
+	login = user
+	incoming = /docker/incoming
+	ssh_config_options =
+        	Port 9022
+        	StrictHostKeyChecking no
+
+
 References
 ----------
 
