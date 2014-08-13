@@ -2,7 +2,7 @@ docker-debian-repository
 ========================
 
 This docker box provides an apt repository based on the tool reprepro. 
-The repository is be served by an nginx server.
+The repository is served by an nginx server.
 
 Status : work in progress / not ready for production yet.
 
