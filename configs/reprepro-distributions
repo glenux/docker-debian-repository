@@ -1,0 +1,17 @@
+Origin: Glenn Y. Rolland
+Label: Glenux Truc
+Suite: unstable
+Codename: sid
+Version: 3.1
+Architectures: i386 amd64 powerpc source
+Components: main non-free contrib
+Description: Glenux.Net Repository Unstable
+
+Origin: Glenn Y. Rolland
+Label: Glenux Truc
+Suite: testing
+Codename: wheezy
+Version: 3.1
+Architectures: i386 amd64 powerpc source
+Components: main non-free contrib
+Description: Glenux.Net Repository Testing

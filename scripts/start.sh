@@ -9,7 +9,9 @@
 SSH_USERPASS=`pwgen -c -n -1 8`
 mkdir /home/user
 useradd -G sudo -d /home/user -s /bin/bash user 
-chown user /home/user
+chown -R user /home/user
+chown -R user /docker/incoming
+	
 echo "user:$SSH_USERPASS" | chpasswd
 echo "ssh user password: $SSH_USERPASS"
 
@@ -26,10 +28,13 @@ chown -R user /home/user/.ssh
 # load cron
 CRONFILE=`mktemp`
 cat > $CRONFILE <<EOF
-* * * * * echo "pif" >> /home/user/pif.log
+* * * * * reprepro-import >> /var/log/reprepro.log
 EOF
-crontab -u user $CRONFILE
+crontab -u root $CRONFILE
 rm -f $CRONFILE
+
+# run import once, to create the right directory structure
+reprepro-import
 
 supervisord -n
 

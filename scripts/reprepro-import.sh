@@ -1,8 +1,8 @@
 #!/bin/sh
 
-BASEDIR=$HOME/debian
-INCOMING=$BASEDIR/incoming
-OUTDIR=$HOME/public_html/debian
+BASEDIR=/var/lib/reprepro
+INCOMING=/docker/incoming
+OUTDIR=/var/www/debian
 
 #
 # Make sure we're in the apt/ directory
@@ -62,4 +62,4 @@ for i in $INCOMING/*.changes; do
   # Finally delete the .changes file itself.
   rm  $i
 done
-
+chown -R www-data:www-data $OUTDIR
