@@ -24,9 +24,16 @@ Fill your ``~/.dput.cf`` with the following content :
         	StrictHostKeyChecking no
 
 
-Then try to upload your latest package :
+Then upload the latest package you maintain :
 
-	 dput ~/src/_Glenux/foobar_0.1.3_amd64.changes
+	$ dput ~/src/foobar_0.1.10_amd64.changes
+	Trying to upload package to docker
+	Uploading to docker (via scp to 172.17.0.152):
+	foobar_0.1.10_all.deb              100%   39KB  39.3KB/s   00:00    
+	foobar_0.1.10.dsc                  100%  488     0.5KB/s   00:00    
+	foobar_0.1.10.tar.gz               100%  826KB 826.0KB/s   00:00    
+	foobar_0.1.10_amd64.changes        100% 1488     1.5KB/s   00:00    
+	Successfully uploaded packages.
 
 
 References
