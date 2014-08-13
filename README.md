@@ -1,13 +1,25 @@
-docker-debian-repository
-========================
+Debian-repository for Docker
+============================
 
 This docker box provides an apt repository based on the tool reprepro. 
 The repository is served by an nginx server.
 
-Status : work in progress / not ready for production yet.
 
-Uploading packages
-------------------
+Usage
+-----
+
+### Running the box
+
+Get the box from docker's automated builds
+
+	docker pull glenux/debian-repository
+
+Run with 22 and 80 ports opened. Share a directory containing you public SSH keys.
+
+	docker run -d -p 49160:22 -p 49161:80 glenux/debian-repository
+
+
+### Uploading packages
 
 Fill your ``~/.dput.cf`` with the following content :
 
@@ -36,14 +48,27 @@ Then upload the latest package you maintain :
 	Successfully uploaded packages.
 
 
-References
-----------
+### Accessing the repository
 
-### Tutorials
+Add the following line to your source list
 
-* https://www.isalo.org/wiki.debian-fr/Reprepro
-* http://www.howtoforge.com/setting-up-an-apt-repository-with-reprepro-and-nginx-on-debian-wheezy
-* http://doc.ubuntu-fr.org/tutoriel/comment_creer_depot
-* http://mirrorer.alioth.debian.org/
-* https://wiki.debian.org/SettingUpSignedAptRepositoryWithReprepro
-* https://www.isalo.org/wiki.debian-fr/Reprepro
+	deb http://localhost:49161/debian unstable main contrib non-free
+
+
+Credits
+-------
+
+<!-- ![Gnuside](http://www.gnuside.com/wp-content/themes/gnuside-ignition-0.2-1-g0d0a5ed/images/logo-whitebg-128.png) -->
+
+Got questions? Need help? Tweet at [@glenux](http://twitter.com/glenux).
+
+Debian-Repository for Docker is maintained and funded by [Glenux](http://www.glenux.net)
+
+
+License
+-------
+
+Debian-Repository for Docker is Copyright © 2012 Gnuside. 
+
+It is free software, and may be redistributed under the terms specified in the LICENSE file.
+
