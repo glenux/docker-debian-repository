@@ -1,6 +1,8 @@
 Debian-repository for Docker
 ============================
 
+A local repository for publishing deb files for use with apt.
+
 This docker box provides an apt repository based on the tool reprepro. 
 The repository is served by an nginx server.
 
