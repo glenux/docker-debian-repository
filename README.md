@@ -18,7 +18,7 @@ Get the box from docker's automated builds
 
 Run with 22 and 80 ports opened. Share a directory containing you public SSH keys.
 
-	docker run -d -p 49160:22 -p 49161:80 glenux/debian-repository
+	docker run -d -v $(pwd)/keys:/docker/keys -p 49160:22 -p 49161:80 glenux/debian-repository
 
 
 ### Uploading packages
