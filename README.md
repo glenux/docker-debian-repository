@@ -70,7 +70,7 @@ Debian-Repository for Docker is maintained and funded by [Glenux](http://www.gle
 License
 -------
 
-Debian-Repository for Docker is Copyright © 2012 Gnuside. 
+Debian-Repository for Docker is Copyright © 2014 Glenux.
 
 It is free software, and may be redistributed under the terms specified in the LICENSE file.
 
