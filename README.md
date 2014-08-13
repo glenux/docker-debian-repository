@@ -24,6 +24,11 @@ Fill your ``~/.dput.cf`` with the following content :
         	StrictHostKeyChecking no
 
 
+Then try to upload your latest package :
+
+	 dput ~/src/_Glenux/foobar_0.1.3_amd64.changes
+
+
 References
 ----------
 
