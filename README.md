@@ -64,13 +64,13 @@ Credits
 
 Got questions? Need help? Tweet at [@glenux](http://twitter.com/glenux).
 
-Debian-Repository for Docker is maintained and funded by [Glenux](http://www.glenux.net)
+Debian-Repository for Docker is maintained and funded by [Glenn Y. Rolland, aka Glenux](http://www.glenux.net)
 
 
 License
 -------
 
-Debian-Repository for Docker is Copyright © 2014 Glenux.
+Debian-Repository for Docker is Copyright © 2014 Glenn Y. Rolland.
 
 It is free software, and may be redistributed under the terms specified in the LICENSE file.
 
