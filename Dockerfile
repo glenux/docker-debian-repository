@@ -6,7 +6,7 @@ RUN apt-get update
 
 
 # Install supervisor for managing services
-RUN apt-get install -q -y supervisor cron openssh-server pwgen reprepro screen vim-tiny sudo nginx
+RUN apt-get install -q -y supervisor cron openssh-server pwgen reprepro screen vim-tiny nginx
 
 
 # Configure cron
@@ -31,10 +31,8 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN rm -f /etc/nginx/sites-enabled/default
 ADD configs/nginx-default.conf /etc/nginx/sites-enabled/default
 
-# Setup root & sudo access
+# Setup root access
 RUN echo "root:docker" | chpasswd
-RUN echo %sudo  ALL=NOPASSWD: ALL >> /etc/sudoers
-
 
 # Configure supervisor
 RUN service supervisor stop
@@ -54,4 +52,3 @@ VOLUME ["/docker/keys", "/docker/incoming", "/repository"]
 EXPOSE 80
 EXPOSE 22
 CMD ["/usr/local/sbin/start"]
-

@@ -8,7 +8,7 @@
 # let's create a user to SSH into
 SSH_USERPASS=`pwgen -c -n -1 8`
 mkdir /home/user
-useradd -G sudo -d /home/user -s /bin/bash user 
+useradd -d /home/user -s /bin/bash user
 chown -R user /home/user
 chown -R user /docker/incoming
 	
