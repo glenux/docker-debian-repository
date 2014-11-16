@@ -28,13 +28,12 @@ chown -R user /home/user/.ssh
 # load cron
 CRONFILE=`mktemp`
 cat > $CRONFILE <<EOF
-* * * * * reprepro-import >> /var/log/reprepro.log
+* * * * * /usr/local/sbin/reprepro-import >> /var/log/reprepro.log
 EOF
 crontab -u root $CRONFILE
 rm -f $CRONFILE
 
 # run import once, to create the right directory structure
-reprepro-import
+/usr/local/sbin/reprepro-import
 
 supervisord -n
-
