@@ -49,7 +49,7 @@ ENV DEBIAN_FRONTEND newt
 ADD scripts/start.sh /usr/local/sbin/start
 RUN chmod 755 /usr/local/sbin/start
 
-VOLUME ["/docker/keys", "/docker/incoming"]
+VOLUME ["/docker/keys", "/docker/incoming", "/repository"]
 
 EXPOSE 80
 EXPOSE 22
