@@ -25,13 +25,10 @@ for key in /docker/keys/*.pub ; do
 done
 chown -R user /home/user/.ssh
 
-# load cron
-CRONFILE=`mktemp`
-cat > $CRONFILE <<EOF
+# load crontab for root
+crontab <<EOF
 * * * * * /usr/local/sbin/reprepro-import >> /var/log/reprepro.log
 EOF
-crontab -u root $CRONFILE
-rm -f $CRONFILE
 
 # run import once, to create the right directory structure
 /usr/local/sbin/reprepro-import
