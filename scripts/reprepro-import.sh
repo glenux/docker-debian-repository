@@ -2,7 +2,7 @@
 
 BASEDIR=/var/lib/reprepro
 INCOMING=/docker/incoming
-OUTDIR=/var/www/debian
+OUTDIR=/repository/debian
 
 #
 # Make sure we're in the apt/ directory

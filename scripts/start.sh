@@ -8,7 +8,7 @@
 # let's create a user to SSH into
 SSH_USERPASS=`pwgen -c -n -1 8`
 mkdir /home/user
-useradd -G sudo -d /home/user -s /bin/bash user 
+useradd -d /home/user -s /bin/bash user
 chown -R user /home/user
 chown -R user /docker/incoming
 	
@@ -25,16 +25,12 @@ for key in /docker/keys/*.pub ; do
 done
 chown -R user /home/user/.ssh
 
-# load cron
-CRONFILE=`mktemp`
-cat > $CRONFILE <<EOF
-* * * * * reprepro-import >> /var/log/reprepro.log
+# load crontab for root
+crontab <<EOF
+* * * * * /usr/local/sbin/reprepro-import >> /var/log/reprepro.log
 EOF
-crontab -u root $CRONFILE
-rm -f $CRONFILE
 
 # run import once, to create the right directory structure
-reprepro-import
+/usr/local/sbin/reprepro-import
 
 supervisord -n
-
