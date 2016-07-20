@@ -1,5 +1,5 @@
-FROM debian:testing
-MAINTAINER Glenn Y. Rolland <glenux@glenux.net>
+FROM debian:latest
+MAINTAINER Glenn Y. Rolland <glenux@glenux.net> Dmitrii Zolotov <dzolotov@herzen.spb.ru>
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
