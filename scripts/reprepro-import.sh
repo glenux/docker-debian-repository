@@ -11,8 +11,8 @@ cd $INCOMING
 cd ..
 
 #set -x
-reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks testing
-reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks wheezy
+reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks stable
+reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks jessie
 reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks unstable
 reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks sid
 #
