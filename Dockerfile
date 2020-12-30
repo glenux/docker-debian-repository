@@ -1,5 +1,6 @@
 FROM debian:latest
-MAINTAINER Glenn Y. Rolland <glenux@glenux.net> Dmitrii Zolotov <dzolotov@herzen.spb.ru>
+LABEL maintainer="Glenn Y. Rolland <glenux@glenux.net>"
+LABEL contributors="Dmitrii Zolotov <dzolotov@herzen.spb.ru>"
 
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
