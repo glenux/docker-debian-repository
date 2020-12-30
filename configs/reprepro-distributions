@@ -1,17 +1,26 @@
 Origin: Glenn Y. Rolland
-Label: Glenux Truc
+Label: Easy Debian Repository
 Suite: unstable
 Codename: sid
 Version: 3.1
 Architectures: i386 amd64 powerpc source
 Components: main non-free contrib
-Description: Glenux.Net Repository Unstable
+Description: Easy Debian Repository Unstable
 
 Origin: Glenn Y. Rolland
-Label: Glenux Truc
+Label: Easy Debian Repository
 Suite: testing
-Codename: wheezy
+Codename: bullseye
 Version: 3.1
 Architectures: i386 amd64 powerpc source
 Components: main non-free contrib
-Description: Glenux.Net Repository Testing
+Description: Easy Debian Repository Testing
+
+Origin: Glenn Y. Rolland
+Label: Easy Debian Repository
+Suite: stable
+Codename: buster
+Version: 3.1
+Architectures: i386 amd64 powerpc source
+Components: main non-free contrib
+Description: Easy Debian Repository Stable
