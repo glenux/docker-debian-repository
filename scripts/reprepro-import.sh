@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 BASEDIR=/var/lib/reprepro
 INCOMING=/docker/incoming
