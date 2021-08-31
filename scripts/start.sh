@@ -30,6 +30,9 @@ crontab <<EOF
 * * * * * /usr/local/sbin/reprepro-import >> /var/log/reprepro.log
 EOF
 
+# run distro config generator
+/usr/local/sbin/create-distros
+
 # run import once, to create the right directory structure
 /usr/local/sbin/reprepro-import
 
