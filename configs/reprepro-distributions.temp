@@ -1,0 +1,8 @@
+Origin: {{EASYREPO_ORIGIN}}
+Label: {{EASYREPO_LABEL}}
+Suite: {{EASYREPO_SUITE}}
+Codename: {{EASYREPO_CODENAME}}
+Version: 3.1
+Architectures: {{EASYREPO_ARCHITECTURES}}
+Components: main non-free contrib
+Description: {{EASYREPO_DESCRIPTION}}
