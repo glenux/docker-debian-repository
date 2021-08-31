@@ -15,9 +15,9 @@ cd ..
 # Check for EASYREPO_SUITES to create symlinks
 EASYREPO_SUITES="${EASYREPO_SUITES:-unstable,sid/stable,buster/testing,bullseye}"
 
-for $k in $(echo ${EASYREPO_SUITES} | sed "s/\// /g")
+for k in $(echo ${EASYREPO_SUITES} | sed "s/\// /g")
 do
-  g=($(echo $i | sed "s/\,/ /g"))
+  g=($(echo $k | sed "s/\,/ /g"))
   reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks ${g[0]}
 done
 
