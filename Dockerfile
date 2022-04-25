@@ -27,6 +27,11 @@ RUN chmod 755 /usr/local/sbin/reprepro-import
 RUN mkdir -p /var/lib/reprepro/conf
 ADD configs/reprepro-distributions /var/lib/reprepro/conf/distributions
 
+# reprepro config generator
+ADD scripts/create-distros.sh /usr/local/sbin/create-distros
+RUN chmod 755 /usr/local/sbin/create-distros
+ADD configs/reprepro-distributions.temp /etc/reprepro-distributions.temp
+
 # Configure nginx
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 RUN rm -f /etc/nginx/sites-enabled/default

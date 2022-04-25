@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 BASEDIR=/var/lib/reprepro
 INCOMING=/docker/incoming
@@ -11,10 +11,17 @@ cd $INCOMING
 cd ..
 
 #set -x
-reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks stable
-reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks jessie
-reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks unstable
-reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks sid
+
+# Check for EASYREPO_SUITES to create symlinks
+EASYREPO_SUITES="${EASYREPO_SUITES:-unstable,sid/stable,buster/testing,bullseye}"
+
+for k in $(echo ${EASYREPO_SUITES} | sed "s/\// /g")
+do
+  g=($(echo $k | sed "s/\,/ /g"))
+  reprepro -V --basedir $BASEDIR --outdir $OUTDIR createsymlinks ${g[0]}
+done
+
+
 #
 #  See if we found any new packages
 #
