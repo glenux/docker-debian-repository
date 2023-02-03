@@ -22,6 +22,7 @@ rm -f /home/user/.ssh/authorized_keys
 for key in /docker/keys/*.pub ; do
 	echo "- adding key $key"
 	cat $key >> /home/user/.ssh/authorized_keys
+	printf \\\n >> /home/user/.ssh/authorized_keys
 done
 chown -R user /home/user/.ssh
 
